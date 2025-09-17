@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <!-- SWIPING FUNCTIONALITY-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <!-- STYLES -->
+  <link rel="stylesheet" href="overview-style.css">
+  <link rel="stylesheet" href="general-style.css">
+  <!-- TITLE -->
+  <title>RUFUS DESIGN - OVERVIEW</title>
+</head>
+
+<body>
+   <!--HEADER-->
+    <header>
+      <nav>
+        <div id="nav-bar-rufus-design">
+          <a id="nav-bar-RUFUS-DESIGN">RUFUS DESIGN</a>
+        </div>
+        <div class="nav-middle">
+            <a href="/overview.html" id="overview-button">OVERVIEW</a>
+            <a href="/selected.html">SELECTED</a>
+        </div>
+
+        <span class="spacer" style="flex:1;"></span>
+
+        <div>
+        <a href="/about.html">ABOUT</a>
+        </div>
+      </nav>
+    </header>
+
+  <!-- MAIN -->
+  <main id="swup" class="transition-fade">
+    <!-- DORMANT ELEMENTS -->
+      <!-- hamburger -->
+      <div id="hamburger" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- overlay menu -->
+      <div id="overlay" class="overlay">
+        <div class="menu-content">
+          <a href="/overview.html">OVERVIEW</a>
+          <a href="/selected.html">SELECTED</a>
+          <a href="/about.html">ABOUT</a>
+        </div>
+      </div>
+    <!-- /DORMANT ELEMENTS -->
+
+
+    <!--GALLERY-->
+    <div class="gallery-modal">
+      <div class="gallery-content">
+        <p class="gallery-artworktitle"></p>
+        <button class="close-button"></button>
+        <!-- <button class="arrow left">◀</button>   -->
+        <div class="gallery-img-container">
+          <img class="gallery-img" src="" alt="Gallery Image">
+        </div>
+        <!-- <button class="arrow right">▶</button> -->
+        <div class="fade-scroll">
+          <div class="fade fade-top"></div>
+          <p class="gallery-caption"></p>
+          <div class="fade fade-bottom"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- GRID -->
+    <section class="artwork-grid"> 
+      <div class="grid-wrapper">
+        <div class="grid-item" data-gallery-id="item-D7">
+          <h1>FinSum TABLOID</h1>
+          <img src="Images/Main Section Images/**E-FinSum-Tabloid/FS_0.webp" alt="Art 7">
+          <h5>editorial XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D2">
+          <h1>BELLA VISTA</h1>
+          <img src="Images/Main Section Images/**A-Bella Vista/E_BellaVista_1.webp" alt="Art 2">
+          <h5>advertisement XX年XX月</h5>
+        </div>
+        
+        <div class="grid-item" data-gallery-id="item-D14">
+          <h1>ARTWORK TITLE</h1>
+          <img src="Images/Main Section Images/**G-Gyoen/gyoen-温室-omote_0.jpg" alt="Art 14">
+          <h5>graphic XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D10">
+            <h1>ARTWORK TITLE</h1>
+            <img src="Images/Main Section Images/**G-FouFow/G_FouFow_1.webp" alt="Art 10">
+            <h5>graphic XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D5">
+            <h1>YOGA</h1>
+            <img src="Images/Main Section Images/**D-Yoga insta/yoga-1.webp" alt="Art 5">
+            <h5>digital XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D1"> 
+            <h1>AKOYA PEARLS</h1>
+            <img src="Images/Main Section Images/**A-Akoya/A_akoya_0.webp" alt="Art 1">
+            <h5>advertisement XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D12">
+          <h1>ARTWORK TITLE</h1>
+            <img src="Images/Main Section Images/**G-Gyoen/gyoen-温室-omote_0.jpg" alt="Art 12">
+            <h5>graphic XX年XX月</h5>
+        </div>
+        
+        <div class="grid-item" data-gallery-id="item-D8">
+            <h1>KYOTO</h1>
+            <img src="Images/Main Section Images/**E-Kyoto/Kyoto_0.webp" alt="Art 8">
+            <h5>editorial XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D3">
+            <h1>SPANISH SHOES</h1>
+            <img src="Images/Main Section Images/**A-Spanish Shoes/shoe_1.webp" alt="Art 3">
+            <h5>advertisement XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D15">
+            <h1>ARTWORK TITLE</h1>
+            <img src="Images/Main Section Images/**G-Gyoen/gyoen-温室-omote_0.jpg" alt="Art 15">
+            <h5>graphic XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D9">
+            <h1>TOYO TIMES</h1>
+            <img src="Images/Main Section Images/**E-Toyotimes/Toyotimes_1.webp" alt="Art 9">
+            <h5>editorial XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D6">
+            <h1>BE ON A ROLL</h1>
+            <img src="Images/Main Section Images/**D_beonaroll_2023/beonaroll_pc_00.webp" alt="Art 6">
+            <h5>digital XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D11">
+            <h1>GYŌEN</h1>
+            <img src="Images/Main Section Images/**G-Gyoen/gyoen-温室-omote_0.jpg" alt="Art 11">
+            <h5>graphic XX年XX月</h5>
+        </div>
+
+        <div class="grid-item" data-gallery-id="item-D4">
+            <h1>TAKANO</h1>
+            <img src="Images/Main Section Images/**A-Takano/takano mag_1.webp" alt="Art 4">
+            <h5>advertisement XX年XX月</h5>
+        </div>
+    
+        <div class="grid-item" data-gallery-id="item-D13">
+            <h1>ARTWORK TITLE</h1>
+            <img src="Images/Main Section Images/**G-Gyoen/gyoen-温室-omote_0.jpg" alt="Art 13">
+            <h5>graphic XX年XX月</h5>
+        </div>
+      </div>
+    </section>
+
+   
+
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+    
+    <!-- IMPORT JAVA, ETC -->
+    <script type="module">
+      import Swup from 'https://unpkg.com/swup@4?module';
+      import SwupHeadPlugin from 'https://unpkg.com/@swup/head-plugin@2?module';
+
+      const swup = new Swup({
+        plugins: [new SwupHeadPlugin()]
+      });
+
+      // Run scripts once on first page load
+      initPageScripts();
+
+      // Run again after every Swup page change
+      swup.hooks.on('page:view', () => {
+        console.log("Swup page:view hook triggered");
+        initPageScripts();
+      });
+    </script>
+    <script src="https://unpkg.com/@studio-freight/lenis/bundled/lenis.min.js"></script>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2, // smoothness
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // custom easing
+      })
+
+      function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
+    </script>
+    
+  </main>
+</body>
+</html>

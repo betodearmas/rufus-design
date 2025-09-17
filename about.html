@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <!-- SWIPING FUNCTIONALITY-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <!-- STYLES -->
+  <link rel="stylesheet" href="about-style.css">
+  <link rel="stylesheet" href="general-style.css">
+  <!-- TITLE -->
+  <title>RUFUS DESIGN - ABOUT</title>
+</head>
+
+<body>
+     <!--HEADER-->
+    <header>
+      <nav>
+        <div class="nav-bar-rufus-design">
+          <a class="nav-bar-RUFUS-DESIGN">RUFUS DESIGN</a>
+        </div>
+        <div class="nav-middle">
+          <a href="/overview.html">OVERVIEW</a>
+          <a href="/selected.html">SELECTED</a>
+        </div>
+
+        <span class="spacer" style="flex:1;"></span>
+
+        <div>
+          <a id="about-button" href="/about.html">ABOUT</a>
+        </div>
+      </nav>
+    </header>
+
+  <!-- SWUP MAIN SECTION -->
+  <main id="swup" class="transition-fade">
+    <!-- INVISIBLE / OFF-SCREEN THINGS -->    
+    <!-- Hamburger -->
+    <div id="hamburger" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- Overlay Menu -->
+    <div id="overlay" class="overlay">
+      <div class="menu-content">
+        <a href="/index.html">RUFUS DESIGN</a>
+        <a href="/editorial.html">EDITORIAL</a>
+        <a href="/digital.html">DIGITAL</a>
+        <a href="/advertising.html">ADVERTISING</a>
+        <a href="/graphic.html">GRAPHIC</a>
+        <a href="/about.html">ABOUT</a>
+        <a href="mailto:">CONTACT</a>
+      </div>
+    </div>    
+    
+ 
+
+
+    <!--HERO SECTION-->
+    <section class="about-hero">
+      <div class="about-hero-top">
+        <div id="about-number-email-container">
+          <div class="reveal-wrapper">
+            <div class="about-number-email-content">
+              <a class="about-content" href="tel:+818081596016">+81 8159 6016</a>
+            </div>
+          </div>
+          <div class="reveal-wrapper">
+            <div class="about-number-email-content">
+              <a class="about-content" href="mailto:">RUFUSDESIGN@GMAIL.COM</a>
+            </div>
+          </div>
+      </div>
+
+      <div id="about-sns-container">
+          <ul>
+            <div class="reveal-wrapper">
+              <li><a href="" class="about-content">INSTAGRAM</a></li>
+            </div>
+            <div class="reveal-wrapper">
+              <li><a href="" class="about-content">TWITTER</a></li>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+      <div id="about-main-text">
+        <div class="reveal-wrapper">
+          <h1>CATALOGUED WORKS <br> RUFUS DESIGN C.2025</h1>
+        </div>
+      </div>
+
+      <div id="about-seiko-cartoon">
+        <img src="Images/About page images/seikosan-no -bg.png" alt="seiko-cartoon"/>
+      </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+    
+    <script type="module">
+      import Swup from 'https://unpkg.com/swup@4?module';
+      import SwupHeadPlugin from 'https://unpkg.com/@swup/head-plugin@2?module';
+
+      const swup = new Swup({
+        plugins: [new SwupHeadPlugin()]
+      });
+
+      // Run scripts once on first page load
+      initPageScripts();
+
+      // Run again after every Swup page change
+      swup.hooks.on('page:view', () => {
+        console.log("Swup page:view hook triggered");
+        initPageScripts();
+      });
+    </script>
+    <script src="https://unpkg.com/@studio-freight/lenis/bundled/lenis.min.js"></script>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2, // smoothness
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // custom easing
+      })
+
+      function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
+    </script>
+    
+  </main>
+</body>
+</html>

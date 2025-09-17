@@ -1,0 +1,53 @@
+#selected-body, html{
+background-color: white;
+margin: 0;
+height: 200vh;
+}
+
+#selected-selected {
+    color: white;
+}
+
+.gallery-container {
+  align-items: stretch; 
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnails {
+  width: 100%;
+  height:auto;
+  display: flex;
+  justify-content: flex-start;  /* align to left edge instead of center */
+  align-items: flex-start;      /* align images to the top edge */
+  overflow-x: hidden;
+  padding: 10px 20px;           /* optional spacing */
+}
+
+.thumbnails img {
+  height: 80px;    /* consistent thumbnail size */
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.main-artwork {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  background: transparent; /* or black if you want a backdrop */
+}
+
+.main-artwork img {
+  height: 60vh;
+  width: auto;
+  object-fit: contain;
+}
+

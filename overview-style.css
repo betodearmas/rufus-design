@@ -1,0 +1,313 @@
+/*ARTWORK GRID*/
+/* Elements hidden at start
+.artwork-grid .grid-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animate in after page loads 
+html.is-animating .artwork-grid .grid-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Final state 
+html.is-ready .artwork-grid .grid-item {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+/* Add stagger */
+.artwork-grid .grid-item:nth-child(1) { transition-delay: 0.1s; }
+.artwork-grid .grid-item:nth-child(2) { transition-delay: 0.2s; }
+.artwork-grid .grid-item:nth-child(3) { transition-delay: 0.3s; }
+.artwork-grid .grid-item:nth-child(4) { transition-delay: 0.4s; }
+
+.artwork-grid {
+  height: auto;
+  min-height: 100vh;
+  display: grid;
+  /*background-color: rgb(185, 183, 177);*/
+}
+.grid-wrapper {
+  display: grid;
+  padding: 4vh;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* responsive columns */
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 4vh;
+  /*background: rgb(240, 241, 245);*/
+  background: rgb(255, 255, 255);
+}
+.grid-item {
+  position:relative;
+  display: flex;
+  flex-direction: column;     /* Stack children vertically */
+  align-items: flex-start;    /* Align all children to the left (optional) */
+  justify-content: flex-start;
+  /* aspect-ratio: 1 / 1; */
+}
+.grid-item:hover{
+  cursor:pointer;
+}
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.grid-item h5 {
+  position: absolute;
+  bottom: -17px;
+  left: 0px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  margin: 0;
+  font-size: .55rem;
+  color: #000000;
+  pointer-events: none;
+  font-family: josephine;
+}
+.grid-item:hover h5 {
+  opacity: 1;
+}
+.grid-item h1 {
+  /* display: none; just for now - I think it's quite obvious / draws attention more without the title displayed */
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+.grid-item h5 {
+  opacity: 0; /* Change this to "1" to display on mobile */
+}
+}
+
+
+
+
+
+/*GALLERY*/
+.gallery-modal {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    /* transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease; */
+    pointer-events: none; /* Don't allow clicking when invisible*/
+    /* backdrop-filter: blur(8px); /* Blur effect */
+    -webkit-backdrop-filter: blur(8px);
+}
+.gallery-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+    z-index: 98; /* one over the ham menu overlay*/
+ }
+
+.gallery-content {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  gap: 2rem;
+  align-items: right;
+  background-color: rgb(255, 255, 255);
+} 
+.gallery-img-container {
+  position: absolute;
+  top: 0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.gallery-img {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 80vh;
+  padding: 1vh 1vh;
+}
+.arrow {
+  display: none;
+  background: none;
+  color: black;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.arrow:hover{
+  color:brown;
+}
+
+
+.arrow.left {left: 20px; top: 40vh;}
+.arrow.right {right: 20px; top: 40vh;}
+
+.close-button {
+  color: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  /* Hide the fallback glyph if you keep ✕ in HTML */
+  font-size: 0;
+}
+.close-button::before,
+.close-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  opacity: 0;
+}
+.close-button:hover {
+  background-color: #000;
+}
+
+.close-button::before,
+.close-button::after {
+  width: 60px;        /* adjust size */
+  height: 1px;        /* thickness */
+  background-color: black;  /* <-- make them black */
+  transform-origin: center;
+}
+.close-button:hover::before,
+.close-button:hover::after {
+background-color: white;
+}
+
+    /* First slash */
+    .close-button::before {
+    transform-origin: 50% 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
+    }
+    /* Second slash */
+    .close-button::after {
+    transform-origin: 50% 50%;
+    transform: translate(-50%, -50%) rotate(-45deg) scaleX(0);
+    }
+
+    /* Triggered when opening */
+    .close-button.is-animating::before {
+    animation: draw45 1000ms ease-out forwards;
+    }
+    .close-button.is-animating::after {
+    animation: drawm45 1000ms ease-out 220ms forwards; /* small delay for second line */
+    }
+
+    @keyframes draw45 {
+    from { transform: translate(-50%, -50%) rotate(45deg) scaleX(0); opacity: 0; }
+    to   { transform: translate(-50%, -50%) rotate(45deg) scaleX(1); opacity: 1; }
+    }
+    @keyframes drawm45 {
+    from { transform: translate(-50%, -50%) rotate(-45deg) scaleX(0); opacity: 0; }
+    to   { transform: translate(-50%, -50%) rotate(-45deg) scaleX(1); opacity: 1; }
+    }
+
+
+.close-button:focus-visible { outline: 2px solid rgba(0, 0, 0, 0.6); outline-offset: 4px; }
+
+
+/* when user engaged "reduced motion" animation doesn't happen */
+@media (prefers-reduced-motion: reduce) {
+  .close-button::before,
+  .close-button::after { opacity: 1; }
+  .close-button::before { transform: translate(-50%, -50%) rotate(45deg) scaleX(1); }
+  .close-button::after  { transform: translate(-50%, -50%) rotate(-45deg) scaleX(1); }
+  .close-button.is-animating::before,
+  .close-button.is-animating::after { animation: none; }
+}
+
+
+.close-button:hover {
+  color: brown;
+}
+.gallery-artworktitle {
+  display: none;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-family: bicyclette, sans-serif;
+  /*kerning: 10em; is it possible??*/
+  font-size: 3rem;
+  margin: none;
+}
+.fade-scroll {
+display: none;
+position: static;
+top: auto;
+left: 0;
+right: 0;
+margin: 0 auto;
+margin-top: 11vh;
+width: 90%;
+height: 40vh;
+text-align: justify;
+overflow-y: auto;
+
+}
+.fade {
+  position: sticky;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  pointer-events: none; /* so clicks pass through */
+  z-index:auto;
+}
+
+.gallery-caption {
+  flex: 1;
+  font-size: 1.1rem;
+  max-width: 100%;
+  line-height: 1.6;
+}
+@media screen and (max-width: 768px) {
+  .gallery-content {
+    width: 100vw;
+    justify-content: center;
+  }
+  .gallery-artworktitle{
+    top: 6vh;
+  }
+  .close-button{
+    font-size: 0.5rem;
+  }
+  .gallery-img-container {
+  top: 20vh;
+}
+  .arrow {
+    display: none;
+  }
+  .fade-scroll{
+    height: 35vh;
+    margin-top: 20vh;
+  }
+  .fade-bottom{
+    display:none;
+  }
+}
