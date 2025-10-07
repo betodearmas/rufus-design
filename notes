@@ -1,0 +1,9 @@
+1. <ul> & <li> add invisible space between elements that's not stylable - it's a browser thing.
+
+2. position: absolute / fixed -> breaks the SmoothScroll
+    2.1 the artwork-grid used to be "absolute"
+    2.2 if changed to "flex" SmoothScroll works but then can be scrolled. How to prevent scrolling on Gallery Modal?
+
+3. check HTML DOM tree positioning of header / gallery modal
+    3.1 for some reason including the SmoothScroll script moves the modal down a bit from the TOP
+    3.2 could be because of where the header is (inside or outside the "main" or "wrapper/content")

@@ -1,0 +1,157 @@
+/* GENERAL STYLE */
+
+/*BODY*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Zen Kaku Gothic New', 'Josefin Sans', sans-serif;
+}
+body, html {
+  background: #ffffff;
+  color: #000;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
+  border:0;
+  
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+@font-face {
+    font-family: bicyclette;
+    src: url(Fonts/Bicyclette/fonnts.com-Bicyclette_Regular.otf);
+}
+@font-face {
+    font-family: america-extended-bold;
+    src: url(Fonts/GT-America/GT-America-Extended-Bold-Trial.otf);
+}
+@font-face {
+    font-family: america-standard-bold;
+    src: url(Fonts/GT-America/GT-America-Standard-Bold-Trial.otf);
+}
+@font-face {
+    font-family: josephine;
+    src: url(Fonts/Josefin_Sans/static/JosefinSans-Regular.ttf);
+}
+
+/*HEADER - NAV*/
+header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 0, 0);
+  z-index: 97; /*one under the ham menu "overlay" screen*/
+}
+nav {
+  height:20px;
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'josephine', sans-serif;
+  margin-left: 5px;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+/* NAV BUTTONS HIGHLIGHTED */
+nav a.active {
+  color: white;
+}
+
+
+
+
+
+/*Ham menu & OVERLAY*/
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  z-index: 99;
+  display: none;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: rgb(183, 255, 97);
+  margin: 5px 0;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+.hamburger.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(10%, 30%) rotate(140deg);
+    transition: .2s ease;
+}
+.hamburger.active span:nth-child(2) {
+   opacity: 0%;
+}
+.hamburger.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(10%, 30%) rotate(-140deg);
+    transition: .2s ease;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Apply blur to background */
+  background-color: rgba(0, 0, 0, 0.4); /* Optional dark tint */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 98; /*1 under the ham menu icon*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.menu-content {
+  text-align: center;
+}
+.menu-content a {
+  display: block;
+  margin: 1rem 0;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s;
+  font-family: 'josephine';
+}
+.menu-content a:hover {
+  color: rgb(183, 255, 97);
+}
+/* /* .scrolled .hamburger span {
+    background-color: rgb(183, 255, 97); Color when scrolled
+} */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block; /* show on mobile */
+  }
+}
+
+
+
+
+
+
+
